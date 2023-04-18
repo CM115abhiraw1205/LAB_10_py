@@ -8,7 +8,7 @@ def add_product():
     itemNumberIWant = int(
         input("Enter the number of items to be added in the stationary shop: "))
     # check if input is valid
-    if itemNumberIWant <= 0:
+    if itemNumberIWant >= 5:
         print("Invalid input")
         return
 
@@ -17,20 +17,16 @@ def add_product():
 
     # add items to cart
     for i in range(itemNumberIWant):
-
-        if len(shoppingCart) >= itemNumberIWant:
-            for i in shoppingCart:
-                print(shoppingCart[i])
-            break
+        # get input from user for product and brand
+        product = input("Enter an item: ")
+        brand = input("Enter the brand name: ")
+        # add product and brand to the shopping cart
+        shoppingCart[product] = brand
 
     # check if cart has less than 5 products
-        if len(shoppingCart) < 5:
-            # get input from user for product and brand
-            product = input("Enter an item: ")
-            brand = input("Enter the brand name: ")
-            # add product and brand to the shopping cart
-            shoppingCart[product] = brand
-            print("You added following items to the cart:")
+    if len(shoppingCart) == itemNumberIWant or len(shoppingCart) == 5:
+        print("You added following items to the cart:")
+        for items in shoppingCart.items():
             print(f"{product}:{shoppingCart[product]}")
 
 # function to search for a product in the shopping cart
