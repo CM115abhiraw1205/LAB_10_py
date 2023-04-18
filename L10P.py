@@ -26,9 +26,9 @@ def add_product():
     # check if cart has less than 5 products
     if len(shoppingCart) == itemNumberIWant or len(shoppingCart) == 5:
         print("You added following items to the cart:")
-        for items in shoppingCart.items():
-            print(f"{product}:{shoppingCart[product]}")
 
+        for items in shoppingCart.items():
+            print(items[0],":",items[1])
 # function to search for a product in the shopping cart
 
 
